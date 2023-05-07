@@ -1,6 +1,7 @@
 package net.fireblastg.mesozoicraft;
 
 import com.mojang.logging.LogUtils;
+import net.fireblastg.mesozoicraft.item.ItemInit;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,6 +19,8 @@ public class MesozoiCraft
 
     public MesozoiCraft() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ItemInit.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
